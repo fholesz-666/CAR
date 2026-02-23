@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Auto nabídka | Ojeté vozy</title>
+  <title>Auto nabídka | Ověřené ojeté vozy</title>
   <meta name="description" content="Moderní nabídka prověřených ojetých vozů. Filtrování podle ceny, nájezdu, paliva i lokality." />
   <meta property="og:title" content="Auto nabídka | Ověřené ojeté vozy" />
   <meta property="og:description" content="Najděte si auto podle vašich představ. Jednoduché filtrování a detailní informace o vozech." />
@@ -16,7 +16,10 @@
       <p class="eyebrow">Auto nabídka</p>
       <h1>Prověřené vozy připravené ihned k odběru</h1>
       <p class="hero-text">Vyberte si z aktuální nabídky kvalitních aut s jasnou historií a férovou cenou.</p>
+      <div class="hero-actions">
       <a href="#offer" class="btn btn-primary">Zobrazit nabídku</a>
+      <button id="adminOpen" class="btn" type="button">Správa inzerátů</button>
+      </div>
     </div>
   </header>
 
@@ -108,6 +111,58 @@
       <h3>Porovnání vozů</h3>
       <div id="compareContent"></div>
       <button class="btn">Zavřít</button>
+    </form>
+  </dialog>
+
+  
+
+  <dialog id="adminDialog">
+    <form method="dialog" class="admin-modal">
+      <h3>Správa inzerátů</h3>
+      <p class="muted">Pro úpravy zadejte heslo. Data se ukládají do prohlížeče (localStorage).</p>
+      <div class="admin-login">
+        <label>Heslo
+          <input id="adminPassword" type="password" placeholder="Zadejte heslo" />
+        </label>
+        <button id="adminUnlock" class="btn btn-primary" type="button">Odemknout</button>
+      </div>
+
+      <div id="adminPanel" class="hidden">
+        <h4>Přidat nový inzerát</h4>
+        <div class="admin-grid">
+          <label>ID* <input id="adId" required placeholder="napr. skoda-fabia-2019" /></label>
+          <label>Název* <input id="adTitle" required /></label>
+          <label>Cena (CZK)* <input id="adPrice" type="number" min="0" required /></label>
+          <label>Rok* <input id="adYear" type="number" min="1990" max="2100" required /></label>
+          <label>Nájezd km* <input id="adMileage" type="number" min="0" required /></label>
+          <label>Výkon kW* <input id="adPower" type="number" min="1" required /></label>
+          <label>Motor* <input id="adEngine" required /></label>
+          <label>Lokalita* <input id="adLocation" required /></label>
+          <label>Telefon* <input id="adPhone" required /></label>
+          <label>Email* <input id="adEmail" type="email" required /></label>
+          <label>Převodovka*
+            <select id="adTransmission"><option value="manual">manual</option><option value="auto">auto</option></select>
+          </label>
+          <label>Palivo*
+            <select id="adFuel"><option value="petrol">petrol</option><option value="diesel">diesel</option><option value="hybrid">hybrid</option><option value="ev">ev</option><option value="lpg">lpg</option><option value="cng">cng</option></select>
+          </label>
+          <label>Stav*
+            <select id="adCondition"><option value="excellent">excellent</option><option value="good">good</option><option value="fair">fair</option></select>
+          </label>
+          <label>VIN <input id="adVin" /></label>
+        </div>
+        <label>Popis* <textarea id="adDescription" required></textarea></label>
+        <label>Výbava (oddělit čárkou) <input id="adFeatures" placeholder="Kamera, Tempomat" /></label>
+        <label>Tagy (oddělit čárkou) <input id="adTags" placeholder="DPH, 1. majitel" /></label>
+        <label>Obrázky (URL/cesty oddělit čárkou) <input id="adImages" placeholder="images/cars/moje-auto/01.jpg, images/cars/moje-auto/02.jpg" /></label>
+        <div class="admin-actions">
+          <button id="adminAdd" class="btn btn-primary" type="button">Přidat inzerát</button>
+          <button id="adminClose" class="btn" value="cancel">Zavřít</button>
+        </div>
+
+        <h4>Existující inzeráty</h4>
+        <ul id="adminList" class="admin-list"></ul>
+      </div>
     </form>
   </dialog>
 

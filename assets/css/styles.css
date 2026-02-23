@@ -76,3 +76,14 @@ footer { border-top:1px solid var(--border); margin-top:2rem; background:#fff; }
 }
 input:focus, select:focus, button:focus, a:focus, textarea:focus { outline:2px solid #93c5fd; outline-offset:1px; }
 @media print { .cta-panel, .btn, .thumbs, .lightbox { display:none !important; } body { background:white; } }
+
+
+.hero-actions { display:flex; gap:.6rem; flex-wrap:wrap; }
+.muted { color: var(--muted); font-size:.92rem; }
+.admin-modal { width:min(1000px,96vw); }
+.admin-login { display:flex; gap:.8rem; align-items:end; margin-bottom:.8rem; flex-wrap:wrap; }
+.admin-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:.7rem; }
+.admin-actions { display:flex; gap:.6rem; margin:.8rem 0 1rem; }
+.admin-list { list-style:none; padding:0; margin:0; display:grid; gap:.45rem; max-height:260px; overflow:auto; }
+.admin-list li { display:flex; justify-content:space-between; gap:.7rem; border:1px solid var(--border); border-radius:8px; padding:.45rem .6rem; background:#fff; align-items:center; }
+.admin-list button { padding:.35rem .6rem; }

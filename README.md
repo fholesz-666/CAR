@@ -47,4 +47,13 @@ Pak otevřete:
 - Volitelně lze zapnout Formspree režim v `assets/js/carDetail.js` (`config.formMode`).
 - Bonus funkce: Oblíbené (localStorage), Porovnání až 3 aut (otevření klávesou `P`), tiskový režim detailu.
 
+## Správa inzerátů přes web (admin)
+
+Na hlavní stránce klikněte na **Správa inzerátů** a zadejte heslo `MF123`.
+
+- Přidání inzerátu: vyplňte formulář a potvrďte tlačítkem `Přidat inzerát`.
+- Mazání inzerátu: v seznamu klikněte na `Smazat`.
+- Změny se ukládají do **localStorage** prohlížeče (bez backendu).
+
+> Pozn.: Pro trvalou správu mezi zařízeními je stále hlavní zdroj `data/cars.json`.
 
