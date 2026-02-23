@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auto nabídka | Ověřené ojeté vozy</title>
+  <meta name="description" content="Moderní nabídka prověřených ojetých vozů. Filtrování podle ceny, nájezdu, paliva i lokality." />
+  <meta property="og:title" content="Auto nabídka | Ověřené ojeté vozy" />
+  <meta property="og:description" content="Najděte si auto podle vašich představ. Jednoduché filtrování a detailní informace o vozech." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="container">
+      <p class="eyebrow">Auto nabídka</p>
+      <h1>Prověřené vozy připravené ihned k odběru</h1>
+      <p class="hero-text">Vyberte si z aktuální nabídky kvalitních aut s jasnou historií a férovou cenou.</p>
+      <a href="#offer" class="btn btn-primary">Zobrazit nabídku</a>
+    </div>
+  </header>
+
+  <section class="benefits container" aria-label="Proč koupit u nás">
+    <article><h2>✅ Ověřené vozy</h2><p>Každé auto kontrolujeme a zveřejňujeme reálné parametry.</p></article>
+    <article><h2>⚡ Rychlé jednání</h2><p>Kontakt na prodejce je dostupný ihned u každého vozu.</p></article>
+    <article><h2>🛡️ Bezpečný nákup</h2><p>Pomůžeme s převodem i financováním bez složitostí.</p></article>
+  </section>
+
+  <main class="container" id="offer">
+    <aside class="filters" aria-label="Filtry nabídky">
+      <div class="filter-grid">
+        <label>Hledat <input id="q" type="search" placeholder="Název, popis, tag" aria-label="Hledat" /></label>
+        <label>Min cena <input id="minPrice" type="number" min="0" /></label>
+        <label>Max cena <input id="maxPrice" type="number" min="0" /></label>
+        <label>Rok od <input id="minYear" type="number" min="1990" max="2100" /></label>
+        <label>Rok do <input id="maxYear" type="number" min="1990" max="2100" /></label>
+        <label>Max nájezd (km) <input id="maxMileage" type="number" min="0" /></label>
+        <label>Výkon od (kW) <input id="minPower" type="number" min="0" /></label>
+        <label>Lokalita
+          <select id="location">
+            <option value="">Všechny</option>
+          </select>
+        </label>
+        <fieldset>
+          <legend>Převodovka</legend>
+          <label><input type="radio" name="transmission" value="" checked /> Vše</label>
+          <label><input type="radio" name="transmission" value="manual" /> Manuál</label>
+          <label><input type="radio" name="transmission" value="auto" /> Automat</label>
+        </fieldset>
+        <fieldset>
+          <legend>Palivo</legend>
+          <label><input type="checkbox" name="fuel" value="petrol" /> Benzín</label>
+          <label><input type="checkbox" name="fuel" value="diesel" /> Diesel</label>
+          <label><input type="checkbox" name="fuel" value="hybrid" /> Hybrid</label>
+          <label><input type="checkbox" name="fuel" value="ev" /> EV</label>
+          <label><input type="checkbox" name="fuel" value="lpg" /> LPG</label>
+          <label><input type="checkbox" name="fuel" value="cng" /> CNG</label>
+        </fieldset>
+        <label class="inline"><input id="onlyRecent" type="checkbox" /> Pouze nově přidané (30 dní)</label>
+        <div>
+          <p class="tag-title">Tagy</p>
+          <div id="tagChips" class="chips"></div>
+        </div>
+      </div>
+      <div class="filter-actions">
+        <label>Řazení
+          <select id="sort">
+            <option value="newest">Nejnovější</option>
+            <option value="priceAsc">Nejlevnější</option>
+            <option value="priceDesc">Nejdražší</option>
+            <option value="mileageAsc">Nejnižší nájezd</option>
+            <option value="yearDesc">Nejvyšší rok</option>
+          </select>
+        </label>
+        <button id="resetFilters" class="btn">Reset filtrů</button>
+      </div>
+    </aside>
+
+    <section>
+      <div class="result-header">
+        <h2>Aktuální nabídka</h2>
+        <p id="resultCount"></p>
+      </div>
+      <div id="zeroState" class="zero hidden">Nenašli jsme žádný vůz. Zkuste upravit nebo resetovat filtry.</div>
+      <div id="carsGrid" class="grid"></div>
+      <div class="load-more-wrap">
+        <button id="loadMore" class="btn btn-primary hidden">Načíst další</button>
+      </div>
+    </section>
+  </main>
+
+  <section class="container about" id="kontakt">
+    <h2>O nás / Kontakt</h2>
+    <p>Auto nabídka je lokální prodejce ojetých vozů s důrazem na transparentnost a jednoduchou komunikaci.</p>
+    <p><strong>Telefon:</strong> <a href="tel:+420777111222">+420 777 111 222</a> · <strong>Email:</strong> <a href="mailto:prodej@autonabidka.cz">prodej@autonabidka.cz</a></p>
+  </section>
+
+  <footer>
+    <div class="container footer-wrap">
+      <p>Auto nabídka · Praha</p>
+      <p><a href="tel:+420777111222">+420 777 111 222</a> · <a href="mailto:prodej@autonabidka.cz">prodej@autonabidka.cz</a></p>
+      <p>© <span id="yearNow"></span> Auto nabídka</p>
+    </div>
+  </footer>
+
+  <dialog id="compareDialog">
+    <form method="dialog" class="compare-modal">
+      <h3>Porovnání vozů</h3>
+      <div id="compareContent"></div>
+      <button class="btn">Zavřít</button>
+    </form>
+  </dialog>
+
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#bfdbfe"/></linearGradient></defs>
+<rect width="1280" height="720" fill="url(#g)"/>
+<rect x="120" y="180" width="1040" height="360" rx="30" fill="#0f172a" opacity="0.85"/>
+<text x="640" y="330" font-size="54" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif">Toyota Corolla Touring Sports 1.8 Hybrid 90 kW</text>
+<text x="640" y="400" font-size="34" text-anchor="middle" fill="#93c5fd" font-family="Arial, sans-serif">Ukázková fotografie 1</text>
+</svg>
