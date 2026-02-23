@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail vozu | Auto nabídka</title>
+  <meta name="description" content="Detail vozu včetně galerie, výbavy a kontaktního formuláře." />
+  <meta property="og:type" content="article" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="subheader container">
+    <a href="index.html" class="btn">← Zpět na nabídku</a>
+  </header>
+
+  <main class="container detail-layout" id="detailPage"></main>
+
+  <div id="lightbox" class="lightbox hidden" aria-hidden="true">
+    <button class="lb-close" aria-label="Zavřít">×</button>
+    <button class="lb-nav" data-dir="prev" aria-label="Předchozí">‹</button>
+    <img id="lbImage" alt="Fotografie vozu" />
+    <button class="lb-nav" data-dir="next" aria-label="Další">›</button>
+  </div>
+
+  <script type="module" src="assets/js/carDetail.js"></script>
+</body>
+</html>
